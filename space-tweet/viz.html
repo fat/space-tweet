@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+  <head>
+    <title>TWIITTTER INVADERS</title>
+    <script src="/moo/mootools-1.2.4-core-nc.js"></script>
+    <script src="/moo/moocanvas/Canvas/Canvas.js"></script>
+    <script src="/moo/moocanvas/Canvas/Gradient.js"></script>
+    <script src="/moo/moocanvas/Canvas/Image.js"></script>
+    <script src="/moo/moocanvas/Canvas/Path.js"></script>
+    <script src="/moo/moocanvas/Canvas/Pattern.js"></script>
+    <script src="/moo/moocanvas/Canvas/Rects.js"></script>
+    <script src="/moo/moocanvas/Canvas/State.js"></script>
+    <script src="/moo/moocanvas/Canvas/Transform.js"></script>
+    <script src="/moo/application.js"></script>
+    <script src="/client/socket.io.js"></script>
+    <style>
+      html,body{
+        background:#000;
+        margin:0;
+        padding:0;
+      }
+      
+      canvas{
+        margin:0;
+        padding:0;
+      }
+      
+      #logo{
+        background:url("/img/logo.png") no-repeat scroll 0 0 transparent;
+        bottom:10px;
+        display:block;
+        height:45px;
+        left:0px;
+        position:absolute;
+        width:500px;
+        z-index:100;
+      } 
+      
+      #key{
+        background:url("/img/key.png") no-repeat scroll 0 0 transparent;
+        bottom:2px;
+        display:block;
+        height:45px;
+        right:0px;
+        position:absolute;
+        width:600px;
+        z-index:100;
+      }  
+    </style>
+  </head>
+  <body>
+    <script>
+      window.addEvent('domready', function(){
+        new Visualization();
+      });
+    </script>
+    
+    <div id="logo"></div>
+    <div id="key"></div>
+  </body>
+</html>
