@@ -1,3 +1,11 @@
+/**
+* SpaceTweet
+*
+* @author Jacob Thornton <jacob@twitter.com>
+* @license The MIT license.
+*/
+
+
 /* WHAT. ?? 8!o
 ======================*/
 

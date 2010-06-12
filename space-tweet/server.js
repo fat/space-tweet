@@ -1,3 +1,11 @@
+/**
+* SpaceTweet
+*
+* @author Jacob Thornton <jacob@twitter.com>
+* @license The MIT license.
+* this is file is a hastey mashup of Guillermo Rauch's server from socket.io and Rick Olson's twitter-node
+*/
+
 var http = require('http'), 
 		url = require('url'),
 		fs = require('fs'),
