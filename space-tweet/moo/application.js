@@ -126,9 +126,9 @@ var Visualization = new Class({
   },
   
   restart: function(){
-    this.gameisover = false;
     this.socket.addEvent('message', this.socketListener);
-    this.move.bind(this).periodical(100);
+    this.periodical = this.move.bind(this).periodical(100);
+    this.gameisover = false;
   },
   
   move: function(){
