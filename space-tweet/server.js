@@ -73,13 +73,7 @@ server.listen(8080);
 		
 // socket.io, I choose you
 // simplest chat application evar
-var json = JSON.stringify, clients = [];
-
-var twit = new TwitterNode({
-  user: 'spacetweeeet', 
-  password: 'twitter123',  
-  track: ['lame', 'bad', 'dumb', 'good', 'cool', 'awesome']
-});
+var json = JSON.stringify, clients = [], twit;
 
 var broadcast = function(tweet){ 
   listener.broadcast({tweet: tweet});
@@ -88,16 +82,21 @@ var broadcast = function(tweet){
 var listener = io.listen(server, {
   
   onClientConnect: function(client){
-    if(!clients.length){
-      //wait to stream until 1 connection is made
-      twit.addListener('tweet', broadcast).stream();
-    }
 		clients.push(client);
 	},
 	
 	onClientDisconnect: function(client){
 	 clients.splice(clients.indexOf(client), 0);
-	}
+	},
+
+  onClientMessage: function(track){
+    if(twit) return;
+    twit = new TwitterNode({
+      user: 'spacetweeeet',
+      password: 'twitter123',
+      track: track //['lame', 'bad', 'dumb', 'good']
+    }).addListener('tweet', broadcast).stream();
+  }
 	
 });
 

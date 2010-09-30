@@ -5,13 +5,14 @@
 * @license The MIT license.
 */
 
-
 /* WHAT. ?? 8!o
 ======================*/
 
 var Visualization = new Class({
+
+  Implements: Options,
+
   //the ugly
-  
   images: {},
   invaders: [],
   folders: ['a','b','c','d','e'],
@@ -20,10 +21,16 @@ var Visualization = new Class({
   gen: 0,
   gameisover: false,
   periodical: null,
-  
+
+  options: {
+    good: ['bieber'],
+    bad: ['twitter']
+  },
+
   i: 0,
   
-  initialize: function(){
+  initialize: function(options){
+    this.setOptions(options);
     this.initCanvas();
     this.initSocket();
     this.listen();
@@ -57,6 +64,9 @@ var Visualization = new Class({
   initSocket: function(){
     io.setPath('/client/');
     this.socket = new io.Socket(null, {rememberTransport: false, port: 8080});
+    this.socket.addEvent('connect', function(){
+      this.socket.send(this.options.good.slice(0).combine(this.options.bad));
+    }.bind(this));
     this.socket.connect();
   },
   
@@ -159,7 +169,8 @@ var Visualization = new Class({
   
   process: function(message){
     var text = message.tweet.text;
-    if(text.test('good')){//eeeat's good.
+
+    if(text.test(new RegExp(this.options.good.join("|"), 'gi'))){//eeeat's good.
       this.ship.shoot();
     }
     else{ //shit's evil!
