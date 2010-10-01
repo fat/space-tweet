@@ -1,0 +1,9 @@
+[submodule "lib/vendor/js-oo"]
+         path = lib/vendor/js-oo
+         url = git://github.com/visionmedia/js-oo.git
+[submodule "client/socket.io"]
+         path = space-tweet/client/lib/vendor/web-socket-js
+         url = git://github.com/LearnBoost/Socket.IO.git
+[submodule "mooCanvas"]
+	path = space-tweet/moo/moocanvas
+	url = git://github.com/ibolmo/moocanvas.git
