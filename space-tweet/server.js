@@ -12,7 +12,9 @@ var http = require('http'),
 		io = require('../lib/socket.io'),
 		sys = require('sys'),
 		TwitterNode = require('../lib').TwitterNode,
-    path = require("path")
+    path = require("path"),
+    username = 'your_username',
+    password = 'your_password'
 		
 send404 = function(res){
 	res.writeHead(404);
@@ -92,8 +94,8 @@ var listener = io.listen(server, {
   onClientMessage: function(track){
     if(twit) return;
     twit = new TwitterNode({
-      user: 'spacetweeeet',
-      password: 'twitter123',
+      user: username,
+      password: password,
       track: track //['lame', 'bad', 'dumb', 'good']
     }).addListener('tweet', broadcast).stream();
   }
