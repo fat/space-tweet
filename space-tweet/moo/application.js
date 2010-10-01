@@ -23,8 +23,8 @@ var Visualization = new Class({
   periodical: null,
 
   options: {
-    good: ['bieber'],
-    bad: ['twitter']
+    good: ['good'],
+    bad: ['bad','lame','dumb']
   },
 
   i: 0,
