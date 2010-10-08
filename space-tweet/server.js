@@ -88,7 +88,7 @@ var listener = io.listen(server, {
 	},
 	
 	onClientDisconnect: function(client){
-	 clients.splice(clients.indexOf(client), 0);
+	 clients.splice(clients.indexOf(client), 1);
 	},
 
   onClientMessage: function(track){
