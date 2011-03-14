@@ -1,0 +1,32 @@
+html, body {
+  background:#000;
+  margin:0;
+  padding:0;
+}
+
+canvas {
+  margin:0;
+  padding:0;
+}
+
+#logo {
+  background:url("/images/logo.png") no-repeat scroll 0 0 transparent;
+  bottom:10px;
+  display:block;
+  height:45px;
+  left:0px;
+  position:absolute;
+  width:500px;
+  z-index:100;
+}
+
+#key {
+  background:url("/images/key.png") no-repeat scroll 0 0 transparent;
+  bottom:2px;
+  display:block;
+  height:45px;
+  right:0px;
+  position:absolute;
+  width:600px;
+  z-index:100;
+}

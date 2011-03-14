@@ -1,6 +1,3 @@
-[submodule "client/socket.io"]
-         path = space-tweet/client/lib/vendor/web-socket-js
-         url = git://github.com/LearnBoost/Socket.IO.git
-[submodule "mooCanvas"]
-	path = space-tweet/moo/moocanvas
-	url = git://github.com/ibolmo/moocanvas.git
+[submodule "public/javascript/socket-io"]
+	path = public/javascript/socket-io
+	url = https://github.com/LearnBoost/Socket.IO.git
