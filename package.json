@@ -1,18 +1,20 @@
 {
   "name": "space-tweet",
   "description": "tweets in SPPPACCEEE",
-  "version": "0.0.2",
+  "version": "0.0.2-5",
   "author": "Jacob Thornton <@fat>",
   "main": "./app.js",
   "repository": {
     "type": "git",
-    "url": "https://jacobthornton@github.com/jacobthornton/space-tweet.git"
+    "url": "git@github.com:fat/space-tweet.git"
   },
-  "engine": [ "node >=0.4.0" ],
+  "engine": [
+    "node >=0.4.0"
+  ],
   "dependencies": {
     "socket.io": ">= 0.6.16",
     "twitter-node": ">= 0.0.2",
-    "express": "2.0.0beta3",
+    "express": ">= 2.3.0",
     "jade": "0.8.6"
   }
 }

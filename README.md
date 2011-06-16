@@ -17,13 +17,6 @@ boom! all server dependencies installed...
 
 Oh crap?! something went wrong with the twitter-node dependecy?? If that's the case, don't sweat, it's a known issue: [dumb issue](http://stackoverflow.com/questions/4407531/twitter-node-failing-to-build-node-js-npm-install-twitter-node). The current fix, is to manually clone the repo [here](https://github.com/patmcnally/twitter-node) into a local directory, cd into it, then run "npm install .". If you run into any problems with that feel free to message me.
 
-Next you need to get your client-side decencies (socket.io). To do that:
-
-    git submodule update --init
-
-This will add socket.io's magic to your public/javascript folder. awesome.
-
-
 RUNNING THIS LOCALLY
 ====================
 
