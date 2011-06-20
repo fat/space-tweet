@@ -16,14 +16,12 @@ If you have those, just cd into the root of this repo and run:
 
 boom! all server dependencies installed...
 
-Oh crap?! something went wrong with the twitter-node dependecy?? If that's the case, don't sweat, it's a known issue: [dumb issue](http://stackoverflow.com/questions/4407531/twitter-node-failing-to-build-node-js-npm-install-twitter-node). The current fix, is to manually clone the repo [here](https://github.com/patmcnally/twitter-node) into a local directory, cd into it, then run "npm install .". If you run into any problems with that feel free to message me.
-
 RUNNING THIS LOCALLY
 ====================
 
 Once you've got everything installed, make sure to update the config.json with your twitter username and password! Then:
 
-    node app.js
+    sudo node app.js
 
 this will start up space tweet on port 3000... so go to your browser:
 
