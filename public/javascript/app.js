@@ -202,7 +202,7 @@ var Visualization = {
   },
 
   initSocket: function () {
-    this.socket = new io.Socket('space-tweet.nodejitsu.com');
+    this.socket = new io.Socket('localhost');
     this.socket.connect();
     this.socket.on('connect', function () {
       this.socket.send(JSON.stringify(this.options.good.slice(0).combine(this.options.bad)));

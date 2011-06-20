@@ -18,7 +18,7 @@ app.use(express.static(__dirname + '/public'));
 app.get('/', spaceTweet.index);
 
 //Run
-app.listen(80);
+app.listen(3000);
 
 //It's Log! Log! Log! Better than bad, it's good!
-console.log('Beware of the invasion on: 80');
+console.log('Beware of the invasion on: 3000');
