@@ -8,14 +8,14 @@
 
 var express = require('express')
   , app = express.createServer()
-  , spaceTweet = require('./lib/space-tweet').config(app);
+  , spaceTweet = require('./lib/space-tweet');
 
 //config
 app.set('view engine', 'jade');
 app.use(express.static(__dirname + '/public'));
 
 //Routes
-app.get('/', spaceTweet.index);
+app.get('/', spaceTweet(app));
 
 //Run
 app.listen(3000);
