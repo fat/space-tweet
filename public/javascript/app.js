@@ -202,7 +202,7 @@ var Visualization = {
   },
 
   initSocket: function () {
-    this.socket = new io.connect('http://localhost:3000');
+    this.socket = io.connect('http://localhost:3000');
     this.socket.on('connect', function () {
       this.socket.send(JSON.stringify(this.options.good.slice(0).combine(this.options.bad)));
     }.bind(this));

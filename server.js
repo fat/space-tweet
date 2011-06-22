@@ -8,7 +8,8 @@
 
 var express = require('express')
   , app = express.createServer()
-  , spaceTweet = require('./lib/space-tweet');
+  , spaceTweet = require('./lib/space-tweet')
+  , port = 3000;
 
 //config
 app.set('view engine', 'jade');
@@ -18,7 +19,7 @@ app.use(express.static(__dirname + '/public'));
 app.get('/', spaceTweet(app));
 
 //Run
-app.listen(3000);
+app.listen(port);
 
 //It's Log! Log! Log! Better than bad, it's good!
-console.log('Beware of the invasion on: 3000');
+console.log('Beware of the invasion on: ' + port);
