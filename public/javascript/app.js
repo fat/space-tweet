@@ -202,24 +202,18 @@ var Visualization = {
   },
 
   initSocket: function () {
-    this.socket = new io.Socket('space-tweet.nodejitsu.com');
-    this.socket.connect();
-    this.socket.on('connect', function () {
-      this.socket.send(JSON.stringify(this.options.good.slice(0).combine(this.options.bad)));
-    }.bind(this));
+    this.socket = io.connect();
   },
 
   listen: function () {
     //preload images
     var x = ((this.folders.length * 3) * 2) + 2, y = 0, z = false;
     var fn = function (e) {
-      if (e) {
-        y++;
-      }
+      if (e) y++;
       if (x == y && z) {
         this.ship = new Ship(this);
-        this.socket.on('message', this.socketListener = function (message) {
-          this.process(message);
+        this.socket.on('tweet', this.socketListener = function (tweet) {
+          this.process(tweet);
         }.bind(this));
         this.periodical = this.move.bind(this).periodical(100);
       }
@@ -255,7 +249,7 @@ var Visualization = {
     }
     this.gameisover = true;
     $clear(this.periodical);
-    this.socket.removeEvent('message', this.socketListener);
+    this.socket.removeListener('tweet', this.socketListener);
     this.invaders = [];
     this.gen = 0;
     this.i = 0;
@@ -289,7 +283,7 @@ var Visualization = {
   },
 
   restart: function () {
-    this.socket.on('message', this.socketListener);
+    this.socket.on('tweet', this.socketListener);
     this.periodical = this.move.bind(this).periodical(100);
     this.gameisover = false;
   },
@@ -311,8 +305,8 @@ var Visualization = {
     this.ship.slide();
   },
 
-  process: function (message) {
-    var text = message.tweet.text;
+  process: function (tweet) {
+    var text = tweet.text;
     if (text.test(this.regex.good = this.regex.good || new RegExp(this.options.good.join("|"), 'gi'))) { //it's good.
       this.ship.shoot();
     } else {
@@ -322,7 +316,7 @@ var Visualization = {
         invader.shove(newRow);
       }.bind(this));
 
-      this.invaders.push(new Invader(this, message.tweet, Math.ceil((this.gen / this.rowWidth) + 0.0000001)));
+      this.invaders.push(new Invader(this, tweet, Math.ceil((this.gen / this.rowWidth) + 0.0000001)));
 
       this.gen++;
 
