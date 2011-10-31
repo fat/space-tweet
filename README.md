@@ -21,7 +21,7 @@ RUNNING THIS LOCALLY
 
 Once you've got everything installed, make sure to update the config.json with your twitter username and password! Then:
 
-    sudo node app.js
+    sudo node server.js
 
 this will start up space tweet on port 3000... so go to your browser:
 
