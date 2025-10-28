@@ -1,4 +1,4 @@
-Software is hard… 2025-10-28T06:45:43.715Z SPACE TWEET
+Software is hard… 2025-10-28T06:46:00.034Z SPACE TWEET
 =============
 
 Space Tweet is a visualization of the twitter stream - it uses node.js and the twitter firehose to stage a match of good vs evil: every evil tweet creates a new space invader, while each positive tweet fires a bullet of good from the space defender... Watch the youtube demo @ http://www.youtube.com/watch?v=xvDzLODyDBo
